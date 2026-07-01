@@ -311,6 +311,13 @@ export const Target = (p: IconProps) => (
   </Svg>
 )
 
+export const MapPin = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+    <circle cx="12" cy="10" r="3" />
+  </Svg>
+)
+
 export const CheckCircle2 = (p: IconProps) => (
   <Svg {...p}>
     <path d="M21.801 10A10 10 0 1 1 17 3.335" />
@@ -326,4 +333,3 @@ export const Users = (p: IconProps) => (
     <path d="M16 3.13a4 4 0 0 1 0 7.75" />
   </Svg>
 )
-
