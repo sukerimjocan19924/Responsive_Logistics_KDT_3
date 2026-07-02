@@ -48,7 +48,7 @@ export default function Layout() {
         type="button"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         aria-label="맨 위로"
-        className={`group fixed bottom-7 right-7 z-50 grid h-12 w-12 place-items-center rounded-full bg-gradient-to-b from-sky-400 to-sky-500 text-white shadow-[0_6px_20px_rgba(56,189,248,0.5)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(56,189,248,0.65)] ${
+        className={`group fixed bottom-7 right-7 z-50 grid h-12 w-12 place-items-center rounded-full bg-gradient-to-b from-sky-400 to-sky-500 text-white shadow-[0_4px_8px_rgba(56,189,248,0.3)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_6px_12px_rgba(56,189,248,0.4)] ${
           showTop ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-4 opacity-0'
         }`}
       >

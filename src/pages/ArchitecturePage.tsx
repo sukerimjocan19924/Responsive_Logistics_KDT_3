@@ -11,6 +11,7 @@ import {
   Zap,
 } from "../components/icons";
 import Reveal from "../components/Reveal";
+import PageTabs from "../components/common/PageTabs";
 
 const tabs = [
   { id: "system", label: "시스템 구조" },
@@ -156,11 +157,7 @@ const performance = [
   },
 ];
 
-const scrollTo = (id: string) => {
-  document
-    .getElementById(id)
-    ?.scrollIntoView({ behavior: "smooth", block: "start" });
-};
+// Removed scrollTo, using PageTabs instead
 
 export default function ArchitecturePage() {
   return (
@@ -186,28 +183,7 @@ export default function ArchitecturePage() {
         </div>
       </section>
 
-      <nav
-        className="sticky top-[69px] z-30 px-4 py-6"
-        aria-label="기술 아키텍처 섹션 이동"
-      >
-        <div className="relative mx-auto w-fit">
-          <div className="absolute -inset-2 -z-10 rounded-full bg-white/30 blur-xl" />
-
-          <div className="flex rounded-full border border-white/50 bg-white p-1.5 shadow-lg">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => scrollTo(tab.id)}
-                className="group relative rounded-full px-7 py-3 text-sm font-bold text-slate-500 transition-all duration-300 hover:bg-sky-500 hover:text-white hover:shadow-lg hover:shadow-sky-500/25 focus-visible:bg-sky-500 focus-visible:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
-              >
-                <span className="pointer-events-none absolute -top-2 left-1/2 h-3 w-3 -translate-x-1/2 scale-0 rounded-full bg-sky-400 opacity-0 shadow-[0_0_0_8px_rgba(14,165,233,0.18)] transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100" />
-                {tab.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </nav>
+      <PageTabs tabs={tabs} />
 
       <section id="system" className="scroll-mt-32 px-6 pb-16 pt-8">
         <div className="mx-auto grid max-w-6xl gap-16 rounded-[28px] border border-slate-200 bg-white px-12 py-14 shadow-[0_24px_70px_rgba(15,23,42,0.08)] lg:grid-cols-[0.88fr_1.5fr] lg:items-center">

@@ -154,7 +154,7 @@ export default function ChatWidget({ liftUp }: { liftUp: boolean }) {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? '채팅 닫기' : '채팅 상담 열기'}
-        className="group fixed right-7 z-50 grid h-12 w-12 place-items-center rounded-full bg-gradient-to-b from-sky-400 to-sky-500 text-white shadow-[0_6px_20px_rgba(56,189,248,0.5)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(56,189,248,0.65)]"
+        className="group fixed right-7 z-50 grid h-12 w-12 place-items-center rounded-full bg-gradient-to-b from-sky-400 to-sky-500 text-white shadow-[0_4px_8px_rgba(56,189,248,0.3)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_6px_12px_rgba(56,189,248,0.4)]"
         style={{ bottom: liftUp ? 92 : 28 }}
       >
         <span className="transition-transform duration-300 group-hover:scale-110">
