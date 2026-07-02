@@ -9,6 +9,7 @@ async function enableMocking() {
   const { worker } = await import('./mocks/browser')
   // 워커 파일은 BASE_URL 기준으로 서빙됨. 미등록 요청은 그대로 통과.
   return worker.start({
+    quiet: true,
     onUnhandledRequest: 'bypass',
     serviceWorker: { url: `${import.meta.env.BASE_URL}mockServiceWorker.js` },
   })
