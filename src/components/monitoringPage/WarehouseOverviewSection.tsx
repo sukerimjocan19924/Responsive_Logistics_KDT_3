@@ -152,19 +152,36 @@ export const WarehouseOverviewSection = (): JSX.Element => {
                   <HoverTilt key={card.title} maxRotate={6} scale={1.05}>
                     <div
                       className={`${card.wrapperClass} min-w-0 p-2 rounded-md bg-white/5 transition-all duration-300 hover:shadow-lg
-                                 animate-in fade-in scale-in duration-500`}
+                   animate-in fade-in scale-in duration-500`}
                       style={{ animationDelay: `${200 + idx * 100}ms` }}
                     >
-                      <div className="flex justify-between w-full">
-                        <img
-                          src={card.iconSrc}
-                          alt={card.title}
-                          className="w-6 h-6 flex-shrink-0"
-                        />
-                        <span className={`text-${card.badgeColor}-600 text-xs`}>
-                          {card.badgeType}
-                        </span>
+                      <div className="flex justify-between items-center w-full">
+                        <div
+                          className={`flex items-center justify-center w-8 h-8 rounded-md ${card.iconBgColor} flex-shrink-0`}
+                        >
+                          <img
+                            src={card.iconSrc}
+                            alt={card.title}
+                            className="w-5 h-5"
+                          />
+                        </div>
+
+                        {card.badgeType === "냉장" ? (
+                          <span className="flex items-center px-2 py-[2px] h-[22px] rounded-full bg-blue-100 text-blue-600 text-[11px] font-medium">
+                            {card.badgeType}
+                          </span>
+                        ) : (
+                          <span
+                            className={`flex items-center px-2 py-[1px] h-[22px] rounded-full text-[11px] font-medium ${card.badgeType === "정상" ? "bg-green-100 text-green-600" : "bg-red-100 text-red-600"}`}
+                          >
+                            <span
+                              className={`w-[7px] h-[7px] rounded-full mr-1 ${card.badgeType === "정상" ? "bg-green-600" : "bg-red-600"}`}
+                            />
+                            {card.badgeType}
+                          </span>
+                        )}
                       </div>
+
                       <div className={`${card.valueClass} mt-2 truncate`}>
                         {card.value}
                       </div>
@@ -252,11 +269,16 @@ export const WarehouseOverviewSection = (): JSX.Element => {
                     transition-all duration-300 hover:shadow-lg
                     animate-in fade-in scale-in duration-500"
                 >
-                  <img
-                    src={card.iconSrc}
-                    alt={card.title}
-                    className="w-7 h-7 sm:w-8 sm:h-8 md:w-8 md:h-8 lg:w-10 lg:h-10 flex-shrink-0"
-                  />
+                  <div
+                    className={`flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg ${card.bgColor} flex-shrink-0`}
+                  >
+                    <img
+                      src={card.iconSrc}
+                      alt={card.title}
+                      className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9"
+                    />
+                  </div>
+
                   <div className="flex flex-col min-w-0">
                     <span className="font-bold text-sky-900 text-sm break-words whitespace-normal">
                       {card.title}
